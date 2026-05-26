@@ -54,12 +54,7 @@
 
 ## Setup Requirements
 
-> #### TRAINER PROMPT
->
-> The lesson version of this demo can be found [here](./lesson)
-
-
-[**Everything is self-contained in this Maven project.**](./selenium-tests/) The login page lives in `src/test/resources/webapp/` and the tests open it directly as a local file - no web server required.
+**Everything is self-contained in this Maven project.** The login page lives in `src/test/resources/webapp/` and the tests open it directly as a local file - no web server required.
 
 Docker is only required for the **Healenium backend**.
 
@@ -269,7 +264,31 @@ You also have `LogInTestHealenium` - an identical set of tests using a different
 >
 > Explain simply: "One is a database that stores a record of every element our tests find. The other is a small server that does the comparison when a locator breaks. Without these two things running, Healenium just behaves like normal Selenium."
 >
-> Then mention briefly that Healenium requires a small amount of additional setup - a properties file and a custom driver class. That setup is already done and is not the focus of the demo. The test logic is identical to the Selenium version.
+> Then briefly show the two setup files that are already in the project. Open `src/test/resources/healenium.properties`:
+>
+> ```properties
+> recovery-tries = 1
+> score-cap = .6
+> heal-enabled = true
+> hlm.server.url = http://localhost:7878
+> hlm.imitator.url = http://localhost:8000
+> ```
+>
+> Explain each property in one line:
+> - `recovery-tries` - how many attempts Healenium makes to find a healed locator before giving up
+> - `score-cap` - the minimum similarity score required to accept a healed locator. `0.6` means 60% - below this Healenium throws the original exception rather than guess
+> - `heal-enabled` - a global on/off switch, useful if you want to temporarily disable healing without removing Healenium from the project
+> - `hlm.server.url` - the address of the Healenium backend running in Docker on port 7878
+> - `hlm.imitator.url` - used by the Healenium Pro AI features; must be present even if not actively used
+>
+> Also show the two lines added to `serenity.properties`:
+>
+> ```properties
+> webdriver.provided.type=healenium
+> webdriver.provided.healenium=com.sparta.nam.HealeniumDriverSource
+> ```
+>
+> This is how Serenity knows to use `HealeniumDriverSource` instead of creating a plain ChromeDriver when it sees `@Managed(driver = "provided")` in a test class. The test logic is otherwise identical to the Selenium version.
 
 Run both together:
 
