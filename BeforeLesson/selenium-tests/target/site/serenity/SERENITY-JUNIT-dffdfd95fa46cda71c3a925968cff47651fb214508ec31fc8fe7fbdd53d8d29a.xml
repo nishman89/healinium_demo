@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="com.sparta.nam.LogInTestHealenium" skipped="0" tests="1" time="1.21" timestamp="2026-05-26 04:00:36"><testcase classname="com.sparta.nam.LogInTestHealenium" name="Given valid credentials, when I click Login, then the success popup appears"/></testsuite>

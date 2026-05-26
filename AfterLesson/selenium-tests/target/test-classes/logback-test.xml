@@ -1,0 +1,25 @@
+<!--<configuration>-->
+
+<!--    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">-->
+<!--        <encoder>-->
+<!--            <pattern>%-5level %logger{36} - %msg%n</pattern>-->
+<!--        </encoder>-->
+<!--    </appender>-->
+
+<!--    &lt;!&ndash; Suppress WebDriverManager download info &ndash;&gt;-->
+<!--    <logger name="io.github.bonigarcia.wdm" level="WARN"/>-->
+
+<!--    &lt;!&ndash; Suppress Selenium CDP version warnings &ndash;&gt;-->
+<!--    <logger name="org.openqa.selenium" level="WARN"/>-->
+
+<!--    &lt;!&ndash; Suppress Healenium HTTP queue noise &ndash;&gt;-->
+<!--    <logger name="com.epam.healenium" level="WARN"/>-->
+
+<!--    &lt;!&ndash; Suppress OkHttp connection noise &ndash;&gt;-->
+<!--    <logger name="okhttp3" level="WARN"/>-->
+
+<!--    <root level="INFO">-->
+<!--        <appender-ref ref="CONSOLE"/>-->
+<!--    </root>-->
+
+<!--</configuration>-->

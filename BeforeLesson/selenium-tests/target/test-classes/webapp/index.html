@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sparta Global — Sign In</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="page">
+    <div class="card">
+
+      <div class="logo-area">
+        <svg class="logo-icon" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="44" height="44" rx="9" fill="#B8001F"/>
+          <path d="M22 7 L29 12.5 L29 15.5 L26.5 15.5 L26.5 18.5 L29 18.5 L29 21.5 L22 26.5 L15 21.5 L15 18.5 L17.5 18.5 L17.5 15.5 L15 15.5 L15 12.5 Z" fill="white"/>
+          <rect x="17.5" y="26.5" width="9" height="3" rx="1.5" fill="white" opacity="0.9"/>
+          <rect x="19"   y="29.5" width="6" height="2.5" rx="1.25" fill="white" opacity="0.85"/>
+          <rect x="19.5" y="32"   width="5" height="4"   rx="1.5"  fill="white" opacity="0.8"/>
+          <rect x="16.5" y="18.5" width="11" height="2"  rx="1"    fill="white" opacity="0.45"/>
+        </svg>
+        <div class="logo-text">
+          <span class="logo-name">Sparta Global</span>
+          <span class="logo-sub">Technology &amp; AI Institute</span>
+        </div>
+      </div>
+
+      <h1 class="heading">Sign in to your account</h1>
+
+      <form id="login-form" novalidate>
+        <div class="field">
+          <label for="user-name">Username</label>
+          <input type="text" id="user-name" name="user-name" placeholder="Enter username" autocomplete="username">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="Enter password" autocomplete="current-password">
+        </div>
+        <button type="submit" id="login-button">Login</button>
+      </form>
+
+      <div class="credentials-hint">
+        <div class="credentials-hint__col">
+          <span class="credentials-hint__label">Accepted username</span>
+          <span class="credentials-hint__value" id="hint-username">sparta</span>
+        </div>
+        <div class="credentials-hint__divider"></div>
+        <div class="credentials-hint__col">
+          <span class="credentials-hint__label">Password</span>
+          <span class="credentials-hint__value" id="hint-password">correct</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Success popup -->
+  <div id="success-message" data-test="success" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="success-title">
+    <div class="popup popup--success">
+      <div class="popup__icon" aria-hidden="true">✔</div>
+      <p id="success-title" class="popup__msg">You have signed in successfully</p>
+      <p class="popup__sub">Welcome, sparta</p>
+      <button class="popup__close" id="close-success" type="button">Dismiss</button>
+    </div>
+  </div>
+
+  <!-- Error popup -->
+  <div id="error-message" data-test="error" class="overlay hidden" role="dialog" aria-modal="true" aria-labelledby="error-title">
+    <div class="popup popup--error">
+      <div class="popup__icon" aria-hidden="true">✕</div>
+      <p id="error-title" class="popup__msg">Incorrect details</p>
+      <p class="popup__sub">Please check your credentials and try again</p>
+      <button class="popup__close" id="close-error" type="button">Dismiss</button>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

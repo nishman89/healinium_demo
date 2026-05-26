@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="com.sparta.nam.LoginTestSelenium" skipped="0" tests="1" time="1.17" timestamp="2026-05-26 03:43:56"><testcase classname="com.sparta.nam.LoginTestSelenium" name="Check that all login form elements are visible on the page"/></testsuite>
